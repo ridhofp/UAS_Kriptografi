@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transpose Column Cipher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h4>Ridho Fitra Palasa</h4>
+        <h4>Nim : 2110059</h4>
+        <h1>Enkripsi Kata Menggunakan Metode Transpose Column Cipher </h1>
+        <form action="/encrypt" method="post">
+            <label for="message">Pesan:</label>
+            <input type="text" id="message" name="message" required>
+            
+            <label for="key">Kunci (Jumlah Kolom):</label>
+            <input type="number" id="key" name="key" required>
+            
+            <input type="submit" value="Enkripsi">
+        </form>
+
+        {% if encrypted_message %}
+        <div class="result">
+            <h2>Hasil Enkripsi</h2>
+            <p><strong>Masukan Kata:</strong> {{ message }}</p>
+            <p><strong>Kunci:</strong> {{ key }}</p>
+            <p><strong>Pesan Terenkripsi:</strong> {{ encrypted_message }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
